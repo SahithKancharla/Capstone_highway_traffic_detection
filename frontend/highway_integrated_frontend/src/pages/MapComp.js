@@ -25,7 +25,7 @@ function MapComponent(){
                     lng: property.lng
                 }}
                 icon={{
-                    url: "https://i.imgur.com/FpHIBa7.png",
+                    url: property.url,
                     scaledSize: new window.google.maps.Size(25,25)
                 }}
                 onClick = {() => {
