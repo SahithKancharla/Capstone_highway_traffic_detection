@@ -1,0 +1,11 @@
+#mapContainer{
+    background-color: white;
+    padding: 30px;
+}
+
+#mapClipPath{
+    height: 600px;
+    width: auto;
+    background-color: white;
+    position: relative;
+}
