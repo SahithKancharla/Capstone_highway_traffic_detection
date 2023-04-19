@@ -46,7 +46,6 @@ function MapComponent(){
                 >
                 <div className = "try">
                 <img className = "images" src= {require(`../${selectedProperty.img}`)}/>
-                // this is the line that enable the communication between dynamic path and image rendering
                     <h4>{selectedProperty.name}</h4>
                 </div>
 
