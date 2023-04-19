@@ -10,6 +10,8 @@ function Home(){
                 </div>
                 {/* <h3 className = 'text'> Escape traffic while you can </h3> */}
             </div>
+            <div>
+            </div>
         </div>
     );
 }

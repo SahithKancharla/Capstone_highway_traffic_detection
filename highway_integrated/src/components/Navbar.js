@@ -44,7 +44,7 @@ function Navbar() {
                   }
                   onClick={closeMobileMenu}
                 >
-                  Meet the Team
+                  about
                 </NavLink>
               </li>
               <li className="nav-item">
