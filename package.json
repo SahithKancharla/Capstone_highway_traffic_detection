@@ -1,6 +1,5 @@
 {
-  "hostname": "http://SahithKancharla.github.io/Capstone_highway_traffic_detection",
-  "homepage": "src/pages/Home.js",
+  "homepage": "http://SahithKancharla.github.io/Capstone_highway_traffic_detection",
   "name": "highway_integrated_frontend",
   "version": "0.1.0",
   "private": true,
