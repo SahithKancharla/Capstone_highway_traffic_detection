@@ -30,6 +30,18 @@ def login(driver):
     driver.find_element("id", "Password").send_keys(password)
     driver.implicitly_wait(2)
     driver.find_element(By.XPATH, "//input[@type='submit' and @class='expand primary button' and @value='Sign in']").click()
+    driver.implicitly_wait(3)
+
+    print('we are here')
+    element = driver.find_element('id', "proceed-button")
+    driver.implicitly_wait(3)
+
+    if element.is_enabled():
+        print('i can click it')
+        element.click()
+    else:
+        print('i cant click it')
+
 
 
 def screenshot_cameras(driver, path):
@@ -84,24 +96,30 @@ def init(driver):
     #Wrap login in a try catch block in case the 'favorite camera' bug appears
     try:
         login(driver)
+        print("Finished")
     except:
         #Wait for user input so that it waits until the user logs in
         print('ERROR')
     input("Press Enter when camera issue fixed")
     
-    print('clocking')
     time.sleep(5)
     driver.find_element("id", "menu-my_511").click()
     driver.implicitly_wait(2)
     time.sleep(1)
     driver.find_element('xpath', "//a[@id='menu-favorite_cameras']").click()
-    # driver.find_element('id', "menu-favorite_cameras").click()
 
 if __name__ == "__main__":
-    driver = webdriver.Chrome()
+    options = webdriver.ChromeOptions()
+    options.add_argument('--ignore-certificate-errors')
+    capabilities = options.to_capabilities()
+    capabilities['acceptInsecureCerts'] = True
+
+    driver = webdriver.Chrome(desired_capabilities=capabilities)
     driver.get("https://www.511virginia.org")
     driver.implicitly_wait(15)
     init(driver)
     folder_name = datetime.now().strftime("Screenshots %m-%d-%y")
     path = os.path.join(os.getcwd(), folder_name) + "/"
     screenshot_cameras(driver, path)
+
+
