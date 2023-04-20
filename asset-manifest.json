@@ -1,0 +1,29 @@
+{
+  "files": {
+    "main.css": "/Capstone_highway_traffic_detection/static/css/main.2f0b7ec7.css",
+    "main.js": "/Capstone_highway_traffic_detection/static/js/main.ee211bfa.js",
+    "static/js/787.ba9b0835.chunk.js": "/Capstone_highway_traffic_detection/static/js/787.ba9b0835.chunk.js",
+    "static/media/intersection.png": "/Capstone_highway_traffic_detection/static/media/intersection.781cf3236e65bc800658.png",
+    "static/media/highway.jpg": "/Capstone_highway_traffic_detection/static/media/highway.89f6959d93e0a319cae6.jpg",
+    "static/media/main.png": "/Capstone_highway_traffic_detection/static/media/main.2d86628340b517db2f8b.png",
+    "static/media/traffic.png": "/Capstone_highway_traffic_detection/static/media/traffic.8c49e7b7abc12fc8896c.png",
+    "static/media/Untitled.png": "/Capstone_highway_traffic_detection/static/media/Untitled.2c17bbc64342b63c4f45.png",
+    "static/media/accident_recognition.ipynb": "/Capstone_highway_traffic_detection/static/media/accident_recognition.a2a972e572bc598c01bd.ipynb",
+    "static/media/accident_recognition_2.ipynb": "/Capstone_highway_traffic_detection/static/media/accident_recognition_2.172914a1939590a0bea4.ipynb",
+    "static/media/start.png": "/Capstone_highway_traffic_detection/static/media/start.b77422809452214cec57.png",
+    "static/media/99018_1559_03-26-23.png": "/Capstone_highway_traffic_detection/static/media/99018_1559_03-26-23.48f3221a175c5affb8b4.png",
+    "static/media/logo.png": "/Capstone_highway_traffic_detection/static/media/logo.1b86e0e339cf4c5e2d5e.png",
+    "static/media/virginia.png": "/Capstone_highway_traffic_detection/static/media/virginia.5184424b5b00f477b114.png",
+    "static/media/traffic_detection_yolov8.ipynb": "/Capstone_highway_traffic_detection/static/media/traffic_detection_yolov8.75873d4e55972f9aa2b1.ipynb",
+    "static/media/vdot511webscraper.py": "/Capstone_highway_traffic_detection/static/media/vdot511webscraper.893c0c57a85245540cf4.py",
+    "static/media/cameraid_json_script.py": "/Capstone_highway_traffic_detection/static/media/cameraid_json_script.718252258d80a029181b.py",
+    "index.html": "/Capstone_highway_traffic_detection/index.html",
+    "main.2f0b7ec7.css.map": "/Capstone_highway_traffic_detection/static/css/main.2f0b7ec7.css.map",
+    "main.ee211bfa.js.map": "/Capstone_highway_traffic_detection/static/js/main.ee211bfa.js.map",
+    "787.ba9b0835.chunk.js.map": "/Capstone_highway_traffic_detection/static/js/787.ba9b0835.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.2f0b7ec7.css",
+    "static/js/main.ee211bfa.js"
+  ]
+}
