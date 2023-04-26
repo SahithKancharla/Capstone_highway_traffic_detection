@@ -61,7 +61,7 @@ def get_box_img(key, date=None):
     file = [f for f in os.listdir('runs/detect/predict') if f.startswith(key)]
     if not file:
         return f"No files found that start with {key} in {'runs/detect/predict/'}"
-    return os.path.abspath('runs/detect/predict/' + file[0])
+    return os.path.relpath('runs/detect/predict/' + file[0])
     # return os.path.relpath(os.path.join('runs/detect/predict', file), start=os.getcwd())
 
 
