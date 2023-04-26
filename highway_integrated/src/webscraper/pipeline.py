@@ -61,9 +61,12 @@ def get_box_img(key, date=None):
     file = [f for f in os.listdir('runs/detect/predict') if f.startswith(key)]
     if not file:
         return f"No files found that start with {key} in {'runs/detect/predict/'}"
-    return os.path.relpath('runs/detect/predict/' + file[0])
-    # return os.path.relpath(os.path.join('runs/detect/predict', file), start=os.getcwd())
+    return os.path.relpath('../webscraper/runs/detect/predict/' + file[0])
 
+    #start from os.cwd and go up a directory then go into /pages/Map.js
+    # start = os.path.abspath(os.path.join(os.getcwd(), os.pardir)) + '/pages/Map.js'
+    # return os.path.relpath(('runs/detect/predict/' + file[0]), start=)
+    #../webscraper
 
 #Helper function that will load in the lat long we manually added to the camera_locations.json
 def load_camera_locations():
