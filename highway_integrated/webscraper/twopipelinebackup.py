@@ -1,19 +1,24 @@
-#File Updating for Frontend 
-    #Find the lastest files
-    #Update the location directory based on the locations.json and then build it
-
-
-#Generating Locations.json
-    #Read from camera_dict.json
-    #Read from camera_locations.json
-
-
 import os
 import json
 import datetime
+from ultralytics import YOLO
+import shutil
+
+
+
+def get_yolov8(model, source):
+    # model = YOLO('yolov8n.pt')
+    results = model.predict(source=source, conf=0.25, save=True, show_labels=False, show_conf=False)
+    return results
+
+
+
+
 
 #Helper function to find the location of the latest image for a given key
 def get_img(key, date=None):
+    #By default look in the directory based on todays date.
+    #Requires that the webscraper was ran today.
     if date is None:
         date = datetime.datetime.now().strftime("%m-%d-%y")
     screenshots_dir = f"Screenshots {date}"
@@ -21,10 +26,12 @@ def get_img(key, date=None):
     if not os.path.exists(screenshots_dir):
         return f"Directory not found: {screenshots_dir}"
     
+    #Look for possible match based on the ID of the camera
     files = [f for f in os.listdir(screenshots_dir) if f.startswith(key)]
     if not files:
         return f"No files found that start with {key} in {screenshots_dir}"
     
+    #Filter down so we get only the most recent timestamp in case multiple exist
     files_with_timestamps = []
     for f in files:
         parts = f.split()
@@ -43,6 +50,7 @@ def get_img(key, date=None):
     
     latest_file = max(files_with_timestamps, key=lambda x: x[1])[0]
     return os.path.relpath(os.path.join(screenshots_dir, latest_file), start=os.getcwd())
+
 
 
 #Helper function that will load in the lat long we manually added to the camera_locations.json
@@ -96,6 +104,13 @@ def generate_locations():
             f.write(json.dumps(data, indent=4))
 
 if __name__ == '__main__':
-    generate_locations()
+    shutil.rmtree('runs', ignore_errors=True)
+    model = YOLO('yolov8n.pt')
+    get_yolov8(model, '/Users/maxbabka/Programs/VDOT WebScraping/webscraper/Screenshots 04-24-23/85434 17:32 04-24-23.png')
+    get_yolov8(model, '/Users/maxbabka/Programs/VDOT WebScraping/webscraper/Screenshots 04-24-23/85701 17:32 04-24-23.png')
+    # generate_locations()
+
+    #Delete the /runs/ folder and subfolders if it exists
+    
 
 

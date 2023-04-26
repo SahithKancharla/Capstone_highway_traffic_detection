@@ -32,15 +32,11 @@ def login(driver):
     driver.find_element(By.XPATH, "//input[@type='submit' and @class='expand primary button' and @value='Sign in']").click()
     driver.implicitly_wait(3)
 
-    print('we are here')
     element = driver.find_element('id', "proceed-button")
     driver.implicitly_wait(3)
 
     if element.is_enabled():
-        print('i can click it')
         element.click()
-    else:
-        print('i cant click it')
 
 
 
@@ -57,8 +53,7 @@ def screenshot_cameras(driver, path):
         return cameraName + time
     
     #Get all the camera names from the table
-    print('entering function')
-    time.sleep(6)
+    time.sleep(5)
 
     table = driver.find_element("id", "cameraList")
     rows = table.find_elements("css selector", "td.camera_selector")
@@ -74,18 +69,13 @@ def screenshot_cameras(driver, path):
     for id in ids:
         element = driver.find_element("id", id)
         element.click()
-        time.sleep(1.5)
+        time.sleep(2)
         stream = driver.find_element("id", "player_container")
         # Take a screenshot of the element
         screenshot = stream.screenshot_as_png
         # Save the screenshot to a file
         with open(path + filename(id, False), "wb") as file:
             file.write(screenshot)
-        #Wait one second and take another screenshot so we can identify vehicle speed
-        time.sleep(1)
-        screenshot = stream.screenshot_as_png
-        with open(path + filename(id, True), "wb") as file:
-            file.write(screenshot)    
 
 def init(driver):
     #Save the screenhots to a folder with the format - 'Screenshots MM-DD-YYYY'
@@ -100,7 +90,7 @@ def init(driver):
     except:
         #Wait for user input so that it waits until the user logs in
         print('ERROR')
-    input("Press Enter when camera issue fixed")
+    input("Press Enter when camera issue fixed: ")
     
     time.sleep(5)
     driver.find_element("id", "menu-my_511").click()
