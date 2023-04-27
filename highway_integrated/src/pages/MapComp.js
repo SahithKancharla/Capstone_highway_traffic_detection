@@ -6,7 +6,7 @@ import {
     Marker,
     InfoWindow
 } from "react-google-maps";
-import properties from "./locations.json";
+import properties from "../webscraper/locations.json";
 
 function MapComponent(){
     const [selectedProperty, setSelectedProperty] = useState(null);
