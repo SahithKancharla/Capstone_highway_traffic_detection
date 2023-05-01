@@ -17,10 +17,10 @@ Sahith add here
 ```
 
 ### How to fix VDOT Webscraper ###
-The script will login, then prompt the user for input. Do not press enter in the python kernel (typing text will have no effect) until you have completed the following steps:
+Running the webscraper will result in a successful login, then prompt the user for input while it waits for the manual fix. Do not press enter in the python kernel until you have completed the following steps:
 
 1. Wait for the visual map of Virginia to appear
 2. Click on any camera, then favorite and unfavorite the camera by clicking the gray star so it becomes yellow then gray again.
-3. Press enter on the python kernel
+3. Press enter on the python kernel prompt. Text entered does not matter.
 
 The webscraper will now run, and place the files in a subfolder for the pipeline and front end to handle.
