@@ -61,7 +61,7 @@ def get_box_img(key, date=None):
     file = [f for f in os.listdir('runs/detect/predict') if f.startswith(key)]
     if not file:
         return f"No files found that start with {key} in {'runs/detect/predict/'}"
-    return os.path.relpath('../webscraper/runs/detect/predict/' + file[0])
+    return os.path.relpath('../../webscraper/runs/detect/predict/' + file[0])
 
     #start from os.cwd and go up a directory then go into /pages/Map.js
     # start = os.path.abspath(os.path.join(os.getcwd(), os.pardir)) + '/pages/Map.js'
@@ -81,7 +81,7 @@ def load_camera_locations():
 #Main driver file that will create the locations.json file to update the front end.
 def generate_locations(model):
     #Open camera_dict.json and read data in the key value pairw {string id: string name}
-    #load_camera_locations_dict = load_camera_locations() #Uncomment when support for this is added
+    locations_dict = load_camera_locations() #Uncomment when support for this is added
 
     with open('camera_dict.json') as f:
         camera_dict = json.load(f)
@@ -107,8 +107,8 @@ def generate_locations(model):
                 url = url
                 camera_id = key
                 vehicles, people = get_detections(key)
-                lat = 0 #Needs to be changed
-                long = 0
+                lat = locations_dict[value]['lat']
+                long = locations_dict[value]['long']
                 img = get_box_img(key)
                 item = {
                     'id': id,
