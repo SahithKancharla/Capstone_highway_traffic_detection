@@ -1,3 +1,6 @@
+#This file was written by Max Babka
+#This is the fully functioning webscraper, that requries a manual fix (see readme)
+
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait

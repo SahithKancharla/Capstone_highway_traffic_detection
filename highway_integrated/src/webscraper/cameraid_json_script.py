@@ -1,3 +1,6 @@
+#This code was written by Max Babka
+#This code is used to generate the camera_dict json file. It does not need to be run unless the favorite cameras are changed.
+
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
