@@ -8,11 +8,13 @@ python Capstone_highway_traffic_detection/highway_integrated/src/webscraper/vdot
 ```
 Please ntoe that there is a manual fix required for the webscraper, please see below
 2. Run the pipeline script
-```python Capstone_highway_traffic_detection/highway_integrated/src/webscraper/pipeline.py
+```
+python Capstone_highway_traffic_detection/highway_integrated/src/webscraper/pipeline.py
 ```
 3. Run the front end
-
-
+```
+Sahith add here
+```
 
 ### How to fix VDOT Webscraper ###
 The script will login, then prompt the user for input. Do not press enter in the python kernel (typing text will have no effect) until you have completed the following steps:
